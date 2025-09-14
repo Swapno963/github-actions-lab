@@ -1,4 +1,4 @@
-naem: Multiple jobs lab
+name: Multiple jobs lab
 on:
   push:
     branches:
