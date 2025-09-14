@@ -34,3 +34,19 @@ jobs:
           echo "Node version: $(node --version)"
           echo "Python version: $(python --version)"
           echo "Git version: $(git --version)"
+
+      - name: Showing date, avaiable disk space and memory usage
+        run: |
+          date
+          df -h
+          free -m
+
+
+      - name: Display custom message
+        env:
+          CUSTOM_MESSAE: "This is secret message"
+        run: echo "$CUSTOM_MESSAE"
+
+      - name: Conditional steps
+        if: github.event_name == 'push'
+        run: echo "This was triggered by a push event"
